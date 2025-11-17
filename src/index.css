@@ -1,0 +1,131 @@
+/* Celebration container */
+.celebration {
+  position: relative;
+  margin: 20px 0;
+  height: 100px;
+}
+
+.emoji {
+  font-size: 4rem;
+  animation: dance 0.7s infinite alternate;
+}
+
+@keyframes dance {
+  0% {
+    transform: translateY(0) rotate(-10deg);
+  }
+  100% {
+    transform: translateY(-15px) rotate(10deg);
+  }
+}
+
+/* Sparkles */
+.sparkles {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  overflow: visible;
+}
+
+.sparkle {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: gold;
+  opacity: 0.8;
+  animation: fall 3s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(150px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Random sparkle spread */
+.sparkle:nth-child(odd) {
+  background: #ff7b00;
+  animation-duration: 2.8s;
+}
+.sparkle:nth-child(even) {
+  background: #ffcc00;
+  animation-duration: 3.2s;
+}
+
+/* Basic existing styles */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f3f8ff;
+  margin: 0;
+  padding: 2rem;
+}
+
+.container {
+  display: inline-block;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+  color: #1e3a8a;
+}
+
+.status {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 10px;
+  margin: 1.5rem auto;
+  justify-content: center;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid #1e3a8a;
+  border-radius: 8px;
+  background: #e0f2fe;
+  color: #0c4a6e;
+  transition: 0.3s;
+}
+
+.square:hover {
+  background: #bae6fd;
+}
+
+.reset-btn {
+  padding: 8px 16px;
+  background-color: #1e40af;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reset-btn:hover {
+  background-color: #1d4ed8;
+}
