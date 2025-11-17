@@ -1,16 +1,12 @@
 import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 
-// ⚠️ IMPORTANT: Replace this with your own repo name
-const repoName = "tictactoe-game"; 
-
 export default defineConfig({
-  base: `/${repoName}/`,   // GitHub Pages requires this
+  base: "/Tic-Tac-Toe-game/",   // <-- MUST MATCH YOUR REPO NAME
 
   plugins: [
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["favicon.ico", "apple-touch-icon.png"],
       manifest: {
         name: "Tic Tac Toe",
         short_name: "TicTacToe",
@@ -19,14 +15,14 @@ export default defineConfig({
         display: "standalone",
         icons: [
           {
-            src: "/icons/icon-192.png",
-            sizes: "192x192",
-            type: "image/png"
+            src: "icons/icon-192.png",
+            type: "image/png",
+            sizes: "192x192"
           },
           {
-            src: "/icons/icon-512.png",
-            sizes: "512x512",
-            type: "image/png"
+            src: "icons/icon-512.png",
+            type: "image/png",
+            sizes: "512x512"
           }
         ]
       }
