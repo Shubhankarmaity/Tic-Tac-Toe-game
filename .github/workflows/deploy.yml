@@ -5,12 +5,15 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
+permissions:
+  contents: write   # IMPORTANT: allows pushing to gh-pages
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node
@@ -27,5 +30,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist
-          branch: gh-pages
+          branch: gh-pages   # branch to deploy to
+          folder: dist       # folder to deploy
