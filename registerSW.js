@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/Tic-Tac-Toe-game/sw.js', { scope: '/Tic-Tac-Toe-game/' })})}
