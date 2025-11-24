@@ -2,7 +2,9 @@ import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
-  base: "/Tic-Tac-Toe-game/",   // <-- MUST MATCH YOUR REPO NAME
+  // REMOVE base if deploying at the root!
+  // If you deploy to https://tic-tac-toe-game-coral-ten.vercel.app/, base should be "/"
+  // base: "/",
 
   plugins: [
     VitePWA({
